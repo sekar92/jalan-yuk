@@ -1,0 +1,35 @@
+# Environment & Secrets
+.env
+.env.local
+.env.*.local
+
+# Node dependencies & npm logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Database (Runtime SQLite database)
+database/*.sqlite
+database/*.sqlite-journal
+
+# Uploads directory contents (preserve directory with .gitkeep)
+public/uploads/*
+!public/uploads/.gitkeep
+
+# System & OS Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+*.swp
+*.swo

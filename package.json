@@ -1,0 +1,14 @@
+{
+  "name": "jalan-yuk",
+  "version": "1.0.0",
+  "description": "Aplikasi web responsif dan PWA-ready untuk penanda lokasi, manajemen tautan Google Maps, kurasi ulasan media sosial (TikTok, Instagram, YouTube), dan pencarian tempat favorit (kuliner, bengkel, wisata, kafe) berbasis PHP & MySQL.",
+  "scripts": {
+    "build:css": "tailwindcss -i src/css/input.css -o public/assets/css/app.css --minify",
+    "watch:css": "tailwindcss -i src/css/input.css -o public/assets/css/app.css --watch"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.17"
+  }
+}
