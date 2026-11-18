@@ -82,17 +82,20 @@ Buka browser di: **`http://localhost:8000`**
 
 ---
 
-## 👥 Akun Uji Coba Default
+## 👥 Akun Default & Kredensial Awal (Production / Deployment Reference)
 
-Semua akun default menggunakan password: **`password123`**
+Setelah menjalankan `php database/init.php`, database secara otomatis membuat 3 akun pengguna bawaan untuk keperluan administrasi dan moderasi awal:
 
-| Role | Username | Email | Akses Utama |
+> **Password default untuk semua akun awal:** `password123`  
+> *(PENTING: Sangat disarankan untuk segera mengubah password atau email akun Admin setelah deployment pertama melalui menu **Admin > Kelola Pengguna**).*
+
+| Role | Username | Email | Hak Akses Utama |
 |---|---|---|---|
-| **Admin** | `admin` | `admin@jalanyuk.test` | Kelola Pengguna, Master Kategori, Kurasi, CRUD Seluruh Lokasi |
-| **Moderator** | `moderator` | `mod@jalanyuk.test` | Antrean Kurasi (Approve/Reject), Edit Konten & Perbaiki Link |
-| **Contributor** | `contributor` | `user@jalanyuk.test` | Tambah Lokasi (Pending ACC), Kelola Tempat Sendiri |
+| **Admin** | `admin` | `admin@jalanyuk.test` | Kelola Pengguna, Master Kategori, Kurasi Konten, CRUD Seluruh Lokasi |
+| **Moderator** | `moderator` | `mod@jalanyuk.test` | Antrean Kurasi (Approve/Reject), Edit Konten & Perbaiki Link Rusak |
+| **Contributor** | `contributor` | `user@jalanyuk.test` | Tambah Lokasi Baru (Pending Approval), Kelola Tempat Sendiri |
 
-Tersedia tombol satu-klik pada halaman `/login` untuk langsung mengisi kredensial uji coba.
+Untuk alasan keamanan dan kepatuhan standar tahap **Production**, bantuan tombol isi-otomatis pada halaman `/login` telah dinonaktifkan. Gunakan tabel kredensial di atas sebagai acuan saat melakukan login awal setelah deploy ulang.
 
 ---
 

@@ -27,15 +27,22 @@ class AuthController
             exit;
         }
 
-        if (Auth::login($usernameOrEmail, $password)) {
-            Auth::setFlash('success', 'Selamat datang kembali, ' . htmlspecialchars(Auth::user()['username']) . '!');
-            header('Location: /');
+        try {
+            if (Auth::login($usernameOrEmail, $password)) {
+                Auth::setFlash('success', 'Selamat datang kembali, ' . htmlspecialchars(Auth::user()['username']) . '!');
+                header('Location: /');
+                exit;
+            }
+
+            Auth::setFlash('danger', 'Username/Email atau Password tidak valid.');
+            header('Location: /login');
+            exit;
+        } catch (\Throwable $e) {
+            error_log("[Login Error] " . $e->getMessage());
+            Auth::setFlash('danger', 'Terjadi kesalahan sistem saat proses masuk: ' . htmlspecialchars($e->getMessage()));
+            header('Location: /login');
             exit;
         }
-
-        Auth::setFlash('danger', 'Username/Email atau Password tidak valid.');
-        header('Location: /login');
-        exit;
     }
 
     public function showRegister(): void

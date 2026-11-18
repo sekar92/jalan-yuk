@@ -84,8 +84,11 @@ class Auth
         self::initSession();
         $pdo = Database::getConnection();
 
-        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :query OR email = :query LIMIT 1");
-        $stmt->execute([':query' => $usernameOrEmail]);
+        $stmt = $pdo->prepare("SELECT * FROM users WHERE username = :username OR email = :email LIMIT 1");
+        $stmt->execute([
+            ':username' => $usernameOrEmail,
+            ':email' => $usernameOrEmail,
+        ]);
         $user = $stmt->fetch();
 
         if ($user && password_verify($password, $user['password_hash'])) {

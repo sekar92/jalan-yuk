@@ -15,7 +15,7 @@ require_once dirname(__DIR__) . '/layouts/navbar.php';
         <form action="/login" method="POST" class="space-y-4">
             <div>
                 <label for="username_or_email" class="form-label required">Username atau Email</label>
-                <input type="text" name="username_or_email" id="username_or_email" class="form-control" placeholder="admin atau admin@jalanyuk.test" required autofocus>
+                <input type="text" name="username_or_email" id="username_or_email" class="form-control" placeholder="Masukkan username atau email" required autofocus>
             </div>
 
             <div>
@@ -29,27 +29,7 @@ require_once dirname(__DIR__) . '/layouts/navbar.php';
                 Belum punya akun? <a href="/register" class="text-blue-600 font-semibold hover:underline">Daftar sekarang</a>
             </div>
         </form>
-
-        <!-- Quick Demo Accounts Helper -->
-        <div class="mt-8 pt-6 border-t border-dashed border-slate-200">
-            <div class="text-xs font-semibold text-slate-500 mb-2.5">Akun Uji Coba Cepat (Password: <code>password123</code>):</div>
-            <div class="flex gap-2">
-                <button type="button" class="btn btn-outline btn-xs flex-1 btn-fill-demo cursor-pointer" data-user="admin">Admin</button>
-                <button type="button" class="btn btn-outline btn-xs flex-1 btn-fill-demo cursor-pointer" data-user="moderator">Moderator</button>
-                <button type="button" class="btn btn-outline btn-xs flex-1 btn-fill-demo cursor-pointer" data-user="contributor">Contributor</button>
-            </div>
-        </div>
     </div>
 </main>
-
-<script>
-document.querySelectorAll('.btn-fill-demo').forEach(btn => {
-    btn.addEventListener('click', () => {
-        const u = btn.getAttribute('data-user');
-        document.getElementById('username_or_email').value = u;
-        document.getElementById('password').value = 'password123';
-    });
-});
-</script>
 
 <?php require_once dirname(__DIR__) . '/layouts/footer.php'; ?>
