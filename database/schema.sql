@@ -1,10 +1,8 @@
 -- ============================================================
 -- Database Schema for "Jalan Yuk!"
 -- Specification matching PRD v1.0
+-- (Uses active database selected by connection / .env)
 -- ============================================================
-
-CREATE DATABASE IF NOT EXISTS `jalan_yuk` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-USE `jalan_yuk`;
 
 -- 1. Tabel users
 CREATE TABLE IF NOT EXISTS `users` (

@@ -2,9 +2,8 @@
 -- Seed Data for "Jalan Yuk!"
 -- Password for all default accounts is 'password123'
 -- Hash generated via password_hash('password123', PASSWORD_BCRYPT)
+-- (Uses active database selected by connection / .env)
 -- ============================================================
-
-USE `jalan_yuk`;
 
 -- Default Users
 INSERT INTO `users` (`id`, `username`, `email`, `password_hash`, `role`) VALUES
