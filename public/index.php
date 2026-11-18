@@ -27,4 +27,19 @@ spl_autoload_register(function ($class) {
 });
 
 // Run Application
-\App\App::run();
+try {
+    \App\App::run();
+} catch (\Throwable $e) {
+    error_log("[JalanYuk Error] " . $e->getMessage() . " in " . $e->getFile() . ":" . $e->getLine());
+    http_response_code(500);
+
+    $errorMessage = $e->getMessage();
+    $errorTrace = $e->getTraceAsString();
+
+    $errorView = dirname(__DIR__) . '/src/Views/errors/500.php';
+    if (file_exists($errorView)) {
+        require_once $errorView;
+    } else {
+        echo "<h1>500 Internal Server Error</h1><p>" . htmlspecialchars($errorMessage) . "</p>";
+    }
+}
